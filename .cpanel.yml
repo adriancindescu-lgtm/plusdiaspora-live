@@ -2,7 +2,7 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/plusdiaspora/public_html
-    - export ZIPFILE=/home/plusdiaspora/repositories/plusdiaspora-live/plusdiaspora.com-upload.zip
+    - export ZIPFILE=/home/plusdiaspora/deploy-packages/plusdiaspora.com-upload.zip
     - export STAGE=/tmp/plusdiaspora-live-stage
     - /bin/rm -rf "$STAGE"
     - /bin/mkdir -p "$STAGE"
