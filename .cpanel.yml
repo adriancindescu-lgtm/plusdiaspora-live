@@ -2,12 +2,10 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/plusdiaspora/public_html
-    - export ZIPURL="https://drive.google.com/uc?export=download&id=1MzajV_iMpy9MALM0DAssTI-hAl0QRH9J"
-    - export ZIPFILE=/tmp/plusdiaspora-live.zip
+    - export ZIPFILE=/home/plusdiaspora/repositories/plusdiaspora-live/plusdiaspora.com-upload.zip
     - export STAGE=/tmp/plusdiaspora-live-stage
     - /bin/rm -rf "$STAGE"
     - /bin/mkdir -p "$STAGE"
-    - /usr/bin/curl -L -o "$ZIPFILE" "$ZIPURL"
     - /usr/bin/unzip -tq "$ZIPFILE"
     - /usr/bin/unzip -oq "$ZIPFILE" -d "$STAGE"
     - /usr/bin/rsync -a --delete "$STAGE"/ "$DEPLOYPATH"/
