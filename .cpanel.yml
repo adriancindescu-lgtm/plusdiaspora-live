@@ -1,16 +1,4 @@
 ---
 deployment:
   tasks:
-    - /usr/bin/test -f /home/plusdiaspora/deploy-packages/plusdiaspora.com-upload.zip
-    - /usr/bin/unzip -tq /home/plusdiaspora/deploy-packages/plusdiaspora.com-upload.zip
-    - /bin/mkdir -p /tmp/plusdiaspora-nextstep-stage
-    - /bin/rm -rf /tmp/plusdiaspora-nextstep-stage
-    - /bin/mkdir -p /tmp/plusdiaspora-nextstep-stage
-    - /usr/bin/unzip -oq /home/plusdiaspora/deploy-packages/plusdiaspora.com-upload.zip -d /tmp/plusdiaspora-nextstep-stage
-    - /usr/bin/test -s /tmp/plusdiaspora-nextstep-stage/nextstep.html
-    - /usr/bin/test -s /tmp/plusdiaspora-nextstep-stage/materiale/webinar-22-noiembrie-2026/NEXTSTEP_22nov_Toate_materialele.pdf
-    - /bin/mkdir -p /home/plusdiaspora/nextstep-backups
-    - /bin/sh -c 'if test -f /home/plusdiaspora/public_html/nextstep.html; then /bin/cp -p /home/plusdiaspora/public_html/nextstep.html /home/plusdiaspora/nextstep-backups/nextstep-$(date +%Y%m%d-%H%M%S).html; fi'
-    - /bin/mkdir -p /home/plusdiaspora/public_html/materiale/webinar-22-noiembrie-2026
-    - /usr/bin/rsync -a /tmp/plusdiaspora-nextstep-stage/nextstep.html /home/plusdiaspora/public_html/nextstep.html
-    - /usr/bin/rsync -a /tmp/plusdiaspora-nextstep-stage/materiale/webinar-22-noiembrie-2026/ /home/plusdiaspora/public_html/materiale/webinar-22-noiembrie-2026/
+    - /bin/sh /home/plusdiaspora/repositories/plusdiaspora-live/deploy-nextstep.sh
