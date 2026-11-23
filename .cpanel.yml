@@ -1,11 +1,4 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/plusdiaspora/public_html
-    - export ZIPFILE=/home/plusdiaspora/deploy-packages/plusdiaspora.com-upload.zip
-    - export STAGE=/tmp/plusdiaspora-live-stage
-    - /bin/rm -rf "$STAGE"
-    - /bin/mkdir -p "$STAGE"
-    - /usr/bin/unzip -tq "$ZIPFILE"
-    - /usr/bin/unzip -oq "$ZIPFILE" -d "$STAGE"
-    - /usr/bin/rsync -a --delete "$STAGE"/ "$DEPLOYPATH"/
+    - /bin/sh /home/plusdiaspora/repositories/plusdiaspora-live/deploy-nextstep.sh
