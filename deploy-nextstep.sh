@@ -1,9 +1,9 @@
 #!/bin/sh
 set -eu
-ZIP=/home/plusdiaspora/deploy-packages/NEXTSTEP_preview_corectat_webinar_22_PDF.zip
+ZIP=/home/plusdiaspora/deploy-packages/NEXTSTEP_publicare_verificata_20261123.zip
 DEST=/home/plusdiaspora/public_html
 BACKUPS=/home/plusdiaspora/nextstep-backups
-EXPECTED=868f85a4a72b6887a872fa043cbf58849d53df6aeb9da9bbf0a01f7512ad1427
+EXPECTED=02d53d2ba2963e854d52f85306e10d0340657893cb57ec5fec0427f67abd88f3
 printf '%s  %s\n' "$EXPECTED" "$ZIP" | sha256sum -c -
 unzip -tq "$ZIP"
 STAGE=$(mktemp -d /tmp/plusdiaspora-nextstep.XXXXXX)
